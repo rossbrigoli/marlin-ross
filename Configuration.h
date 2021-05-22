@@ -57,7 +57,7 @@
 #endif
 
 
-#define CUSTOM_MENDEL_NAME "ROSS v3.0"
+#define CUSTOM_MENDEL_NAME "ROSS v3.1"
 
 // Define this to set a custom name for your generic Mendel,
 // #define CUSTOM_MENDEL_NAME "This Mendel"
@@ -83,7 +83,7 @@
 #define DELTA_SEGMENTS_PER_SECOND 160
 
 // Center-to-center distance of the holes in the diagonal push rods
-#define DELTA_DIAGONAL_ROD 218// mm
+#define DELTA_DIAGONAL_ROD 210// mm
 
 // Horizontal offset from middle of printer to smooth rod center.
 #define DELTA_SMOOTH_ROD_OFFSET 151// mm
@@ -342,7 +342,7 @@ const bool Z_MAX_ENDSTOP_INVERTING = false;
 #ifdef ENABLE_AUTO_BED_LEVELING
 
 
-  #define DELTA_PROBABLE_RADIUS (DELTA_PRINTABLE_RADIUS-50)//Here the probe is set to leveling the range of movement,Increasing the leveling range, reduce the "-50" This value,Reducing leveling range, increase the "-50" value
+  #define DELTA_PROBABLE_RADIUS (DELTA_PRINTABLE_RADIUS-10)//Here the probe is set to leveling the range of movement,Increasing the leveling range, reduce the "-50" This value,Reducing leveling range, increase the "-50" value
   //如：#define DELTA_PROBABLE_RADIUS (DELTA_PRINTABLE_RADIUS-60)
   
   #define LEFT_PROBE_BED_POSITION -DELTA_PROBABLE_RADIUS
@@ -354,13 +354,13 @@ const bool Z_MAX_ENDSTOP_INVERTING = false;
   #define Y_PROBE_OFFSET_FROM_EXTRUDER 0.0
 
   // Previous values was 0.2, changed after chaning the effector limit switch
-  #define Z_PROBE_OFFSET_FROM_EXTRUDER 0.4 //Automatic leveling settings,too high reduce,low increases/
+  #define Z_PROBE_OFFSET_FROM_EXTRUDER 0.5 //Automatic leveling settings,too high reduce,low increases/
 
   #define Z_RAISE_BEFORE_HOMING 4       // Configuration of before homing, Z-axis height raised,the height must be ensured in the range of the maximum height in the Z-axis.
   
   #define XY_TRAVEL_SPEED 4000         //Automatic leveling speed of movement,increasing the speed increase, decrease speed reduction
 
-  #define Z_RAISE_BEFORE_PROBING 80  ////Before the first pre-test point, Z-axis height raised, the height should ensure that the leveling sensors can normally be put down.
+  #define Z_RAISE_BEFORE_PROBING 40  ////Before the first pre-test point, Z-axis height raised, the height should ensure that the leveling sensors can normally be put down.
   #define Z_RAISE_BETWEEN_PROBINGS 5  //The next pre-test point,Z-axis height raised
 
   #define Z_SAFE_HOMING   
@@ -374,7 +374,7 @@ const bool Z_MAX_ENDSTOP_INVERTING = false;
 
   #define ACCURATE_BED_LEVELING
   #ifdef ACCURATE_BED_LEVELING
-    #define ACCURATE_BED_LEVELING_POINTS 5 //Automatic leveling probes,point 3 points, vertical and horizontal axes each point three points,the total is 9 points;If changed to 6, the vertical and horizontal axes points 6 points each, a total of 36 points.
+    #define ACCURATE_BED_LEVELING_POINTS 3 //Automatic leveling probes,point 3 points, vertical and horizontal axes each point three points,the total is 9 points;If changed to 6, the vertical and horizontal axes points 6 points each, a total of 36 points.
     #define ACCURATE_BED_LEVELING_GRID_X ((RIGHT_PROBE_BED_POSITION - LEFT_PROBE_BED_POSITION) / (ACCURATE_BED_LEVELING_POINTS - 1))
     #define ACCURATE_BED_LEVELING_GRID_Y ((BACK_PROBE_BED_POSITION - FRONT_PROBE_BED_POSITION) / (ACCURATE_BED_LEVELING_POINTS - 1))
     #define NONLINEAR_BED_LEVELING
